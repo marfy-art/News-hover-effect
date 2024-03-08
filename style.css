@@ -20,18 +20,123 @@ body{
     max-width: 1200px;
     margin: auto;
     align-items: center;
-    padding-top: 150px;
+    padding-top: 350px;
 
 }
 
-.news-card{
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    text-align: center;
-}
+
 
 .news-img{
     border-top-left-radius: 220px;
     border-top-right-radius: 220px;
+    width: 390px;
+    height: 420px;
+}
+
+.news-card {
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    z-index: 2;
+}
+
+.img-with-hover{
+    position: relative;
+    overflow: hidden;
+    width: 390px;
+    height: 420px;
+    z-index: 3;
+}
+
+.hover-circle-top {
+    width: 180px;
+    height: 180px;
+    border-radius: 100%;
+    background: #00193E;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: -180px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    transition: bottom .60s linear;
+
+   
+}
+
+.news-card:hover .hover-circle-top {
+    bottom: 0;
+    opacity: 1; 
+}
+
+.hover-circle-bottom{
+    width: 180px;
+    height: 180px;
+    border-radius: 100%;
+    background: #E2D2D4;
+    position: absolute;
+    bottom: 145px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    transition: bottom .60s linear;
+    opacity: 1;
+
+}
+
+.news-card:hover .hover-circle-bottom {
+    bottom: -38px;
+    opacity: 1; 
+}
+
+.hover-circle-top a {
+    font-family: "Unica One", sans-serif;
+    font-size: 16px;
+    background: linear-gradient(104deg, #B59E75 -0.76%, #FFE7BD 39.03%, #A9926A 71.66%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    padding: 80px;
+}
+
+.news-text{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    z-index: 10;
+}
+
+.news-text h3{
+    color: #062758;
+    text-align: center;
+
+    /* Description_JP_S */
+    font-family: "Open Sans";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px; /* 186.667% */
+    letter-spacing: 1.5px;
+}
+
+.news-text p{
+    /* Title_EN_S */
+    font-family: "Unica One";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px; /* 162.5% */
+    letter-spacing: 2.24px;
+    background: linear-gradient(92deg, #B59E75 6.26%, #FFE7BD 24.32%, #A9926A 39.14%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
 }
